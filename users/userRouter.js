@@ -68,7 +68,7 @@ router.put("/:id", validateUser(), validateUserId(), async (req, res, next) => {
   try {
     const user = { name: req.body.name };
     const updatedUser = await db.update(req.params.id, user);
-    res.status(200).json(req.updatedUser);
+    res.status(200).json(user);
   } catch (err) {
     next(err);
   }});
